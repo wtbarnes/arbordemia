@@ -17,7 +17,7 @@ class TreeClimber(object):
         try:
             wikipedia.page(seed)
             self.seed = seed
-        except PageError:
+        except wikipedia.PageError:
             self.logger.exception('Cannot find Wikipedia page for %s. Try another starting point.'%seed)
 
         self.tree = Digraph('G')
